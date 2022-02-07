@@ -7,9 +7,10 @@ const prod =document.querySelector(".makeup-list");
 prod.innerHTML="";
 items.forEach((item)=>{
 prod.innerHTML+=  `
-<div class="images">
-<img src=${item.image_link} alt=${item.name}/>
-
+<div class="makeup-container">
+<div>
+<img class="item-pic" src=${item.image_link} alt=${item.name}/>
+</div>
 <div class="details">
 <h3><b>BRAND: </b>${item.brand}</h3>
 <p><b>NAME: </b>${item.name}</p>

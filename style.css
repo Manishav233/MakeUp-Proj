@@ -1,14 +1,31 @@
 body{
-background-color: burlywood;
+    /* background: linear-gradient(#f3d983, #848ce2); */
+    background: rgb(197,236,232);
+background: linear-gradient(90deg, rgb(73, 158, 150) 4%, rgba(148,225,233,1) 52%);
+padding:30px;
 }
 
-/* .images{
-height:0vh;
-width:5rem;
-} */
+.item-pic{
+height:22rem;
+width:22rem;
+border-radius: 50%;
+object-fit:cover;
+}  
 
 .details{
 font-size: 20px;
-font-family: Verdana, Geneva, Tahoma, sans-serif;
-background-color: cyan;
+font-family: 'Inter', sans-serif;
+letter-spacing: 1.2px;
+/* background-color: cyan; */
+}
+
+.makeup-container{
+ background-color:paleturquoise;
+display:flex;
+justify-content: space-between;
+align-items:center;
+margin:20px;
+padding:20px;
+column-gap: 30px;
+border-radius: 30px;
 }
