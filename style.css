@@ -1,0 +1,14 @@
+body{
+background-color: burlywood;
+}
+
+/* .images{
+height:0vh;
+width:5rem;
+} */
+
+.details{
+font-size: 20px;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+background-color: cyan;
+}
