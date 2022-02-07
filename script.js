@@ -20,7 +20,7 @@ prod.innerHTML+=  `
 </div>
 
 `;
-console.log(item.name);
+console.log(item.name, item_price);
 
 });
 }
