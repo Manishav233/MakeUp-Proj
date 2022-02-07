@@ -20,12 +20,12 @@ prod.innerHTML+=  `
 </div>
 
 `;
-console.log(item.name, item_price);
+console.log(item.name, item.price);
 
 });
 }
 
 getAllItems();
 
-function DeleteAllItems{
+function DeleteAllItems(){
 }
