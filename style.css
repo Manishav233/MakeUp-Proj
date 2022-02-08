@@ -29,3 +29,15 @@ padding:20px;
 column-gap: 30px;
 border-radius: 30px;
 }
+
+.add-container{
+display:flex;
+flex-direction:column;
+row-gap:10px;
+background-color: paleturquoise;
+margin:20px;
+padding:20px;
+border-radius:30px;
+font-size: 25px;
+font-family: 'Inter', sans-serif;
+}
