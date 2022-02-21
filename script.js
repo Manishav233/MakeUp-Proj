@@ -23,7 +23,7 @@ prod.innerHTML+=  `
 <div class="details">
 <h3><b>BRAND: </b>${item.brand}</h3>
 <p><b>NAME: </b>${item.name}</p>
-<p><b>PRICE: </b>${item.price}</p>
+<p><b>PRICE: </b>$ ${item.price}</p>
 <p><b>PRODUCT LINK: </b>${item.product_link}</p>
 <p><b>DESCRIPTION: </b>${item.description}</p>
 <button onclick="deleteAllItems(${item.id})">DELETE</button>
@@ -60,4 +60,7 @@ headers:{"Content-type":"application/json"},
 body:JSON.stringify({image_link:Ipos,brand:Ibrand,name:Iname,product_link:Ilink,description:Idesc})});
 getAllItems();
 
+}
+
+async function EditAllItems(item_id){
 }
