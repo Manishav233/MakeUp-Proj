@@ -17,9 +17,11 @@ prod.innerHTML="";
 items.forEach((item)=>{
 prod.innerHTML+=  `
 <div class="makeup-container">
+
 <div>
 <img class="item-pic" src=${item.image_link} alt=${item.name}/>
 </div>
+
 <div class="details">
 <h3><b>BRAND: </b>${item.brand}</h3>
 <p><b>NAME: </b>${item.name}</p>
@@ -27,6 +29,23 @@ prod.innerHTML+=  `
 <p><b>PRODUCT LINK: </b>${item.product_link}</p>
 <p><b>DESCRIPTION: </b>${item.description}</p>
 <button onclick="deleteAllItems(${item.id})">DELETE</button>
+<button onclick="EditAllItems(${item.id})">EDIT</button>
+
+<div class="edit-makeup">
+<input class="ItemPos-${item.id}" value="${item.image_link}  placeholder="Enter Posture">
+<input class="ItemBrand-${item.id}" value="${item.brand}" placeholder="Enter Brand">
+<input class="ItemName-${item.id}" value="${item.name}" placeholder="Enter Name">
+<input class="ItemPrice-${item.id}" value="${item.price}" placeholder="Enter Price">
+<input class="ItemLink-${item.id}" value="${item.product_link}" placeholder="Enter Product Link">
+<input class="ItemDesc-${item.id}" value="${item.description}" placeholder="Enter Description">
+
+
+
+<a class="waves-effect waves-light btn" onclick="EditAllItems(${item.id})"><i class="material-icons left">save</i>SAVE</a>
+</div>
+
+
+
 </div>
 
 
@@ -62,5 +81,27 @@ getAllItems();
 
 }
 
+// function toggleEdit(item_id){
+//     // console.log("editing",userId);
+//     const editUserForm=document.querySelector(`.edit-${userId}`);
+//     console.log(editUserForm.style.display);
+//     editUserForm.style.display=
+//     editUserForm.style.display==="block" ? "none" : "block";
+//     ;
+//     }
+    
 async function EditAllItems(item_id){
+    const Ipos=document.querySelector(`.ItemPos-${item_id}`).value;
+    const Ibrand=document.querySelector(`.ItemBrand-${item_id}`).value;
+    const Iname=document.querySelector(`.ItemName-${item_id}`).value;
+    const Iprice=document.querySelector(`.ItemPrice-${item_id}`).value;
+    const Ilink=document.querySelector(`.ItemLink-${item_id}`).value;
+    const Idesc=document.querySelector(`.ItemDesc-${item_id}`).value;
+  console.log(item_id);
+    
+    const data=await fetch("https://617062da23781c0017289a16.mockapi.io/makeup/"+item_id,
+    {method:"PUT",
+    headers:{"Content-type":"application/json"},
+    body:JSON.stringify({image_link:Ipos,brand:Ibrand,name:Iname,price:Iprice,product_link:Ilink,description:Idesc})});
+    getAllItems();
 }
