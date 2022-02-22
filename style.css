@@ -36,7 +36,7 @@ border-radius: 30px;
 display:flex;
 flex-direction:column;
 row-gap:10px;
-background-color: paleturquoise;
+background-color:whitesmoke;
 margin:20px;
 padding:20px;
 border-radius:30px;
@@ -55,8 +55,7 @@ max-width:1600px;
 }
 
 .edit-makeup{
-    display:flex;
-    flex-direction: column;
-    padding-top:10px;
- row-gap:5px;
+
+ display:none;
+
 }

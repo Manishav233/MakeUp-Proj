@@ -1,3 +1,5 @@
+
+
 document.body.innerHTML=`
 <div class="add-container">
 <input class="Itempos" placeholder="Enter Posture">
@@ -5,7 +7,9 @@ document.body.innerHTML=`
 <input class="Itemname" placeholder="Enter Name">
 <input class="Itemlink" placeholder="Enter Product Link">
 <input class="Itemdesc" placeholder="Enter Description">
-<button onclick="addAllItems()">Save</button>
+
+<a class="waves-effect waves-light btn" onclick="addAllItems()">SAVE</a>
+
 </div>
 <section class="makeup-list"> </section>`;
 
@@ -28,10 +32,11 @@ prod.innerHTML+=  `
 <p><b>PRICE: </b>$ ${item.price}</p>
 <p><b>PRODUCT LINK: </b>${item.product_link}</p>
 <p><b>DESCRIPTION: </b>${item.description}</p>
-<button onclick="deleteAllItems(${item.id})">DELETE</button>
-<button onclick="EditAllItems(${item.id})">EDIT</button>
+<a class="waves-effect waves-light btn" onclick="deleteAllItems(${item.id})"><i class="material-icons left">delete</i>DELETE</a>
+<a class="waves-effect waves-light btn" onclick="toggleEdit(${item.id})"><i class="material-icons left">edit</i>EDIT</a>
 
-<div class="edit-makeup">
+
+<div class="edit-makeup-${item.id}">
 <input class="ItemPos-${item.id}" value="${item.image_link}  placeholder="Enter Posture">
 <input class="ItemBrand-${item.id}" value="${item.brand}" placeholder="Enter Brand">
 <input class="ItemName-${item.id}" value="${item.name}" placeholder="Enter Name">
@@ -81,14 +86,14 @@ getAllItems();
 
 }
 
-// function toggleEdit(item_id){
-//     // console.log("editing",userId);
-//     const editUserForm=document.querySelector(`.edit-${userId}`);
-//     console.log(editUserForm.style.display);
-//     editUserForm.style.display=
-//     editUserForm.style.display==="block" ? "none" : "block";
-//     ;
-//     }
+function toggleEdit(item_id){
+    console.log("editing",item_id);
+    const editUserForm=document.querySelector(`.edit-makeup-${item_id}`);
+    console.log(editUserForm.style.display);
+    editUserForm.style.display=
+    editUserForm.style.display==="block" ? "none" : "block";
+    ;
+    }
     
 async function EditAllItems(item_id){
     const Ipos=document.querySelector(`.ItemPos-${item_id}`).value;
